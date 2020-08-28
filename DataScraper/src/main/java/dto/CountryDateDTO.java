@@ -35,6 +35,23 @@ public class CountryDateDTO {
         Date = ZonedDateTime.parse(jsonObject.get("Date")).toLocalDate().toString();
     }
 
+    public String[] getData() {
+        return new String[]{
+                this.getCountry(),
+                this.getCountryCode(),
+                this.getProvince(),
+                this.getCity(),
+                this.getCityCode(),
+                this.getLat(),
+                this.getLon(),
+                this.getConfirmed(),
+                this.getDeaths(),
+                this.getRecovered(),
+                this.getActive(),
+                this.getDate()
+        };
+    }
+
     public String getCountry() {
         return Country;
     }

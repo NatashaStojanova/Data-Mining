@@ -10,7 +10,7 @@ public class Wrapper {
         System.out.println("WorldMeter COVID-19 Country Data Scrapper by Natasha Stojanova\n");
 
         System.out.println("===============================================\n");
-        System.out.println("Enter country name: (Example: macedonia | south-africa | . . .");
+        System.out.println("Enter country name: (Example: macedonia | south-africa | . . .)");
         Scanner in = new Scanner(System.in);
         String country = in.nextLine();
 
@@ -20,11 +20,11 @@ public class Wrapper {
         DataScraper scraper = new DataScraper(outputPath, country);
 
         System.out.println("===============================================\n");
-        System.out.println("Enter date FROM: (Format YYYY-MM-DD, example: 2020-01-01");
+        System.out.println("Enter date FROM: (Format YYYY-MM-DD, example: 2020-01-01)");
         String dateFrom = in.nextLine();
 
         System.out.println("===============================================\n");
-        System.out.println("Enter date TO: (Format YYYY-MM-DD, example: 2020-02-02");
+        System.out.println("Enter date TO: (Format YYYY-MM-DD, example: 2020-02-02)");
         String dateTo = in.nextLine();
 
         scraper.getScraper()

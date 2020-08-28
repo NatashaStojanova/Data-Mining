@@ -30,54 +30,11 @@ public class WriteDataToFile {
                 .withHeader(HEADERS))) {
             objects.forEach(country -> {
                 try {
-                    printer.printRecord(
-                            country.getCountry(),
-                            country.getCountryCode(),
-                            country.getProvince(),
-                            country.getCity(),
-                            country.getCityCode(),
-                            country.getLat(),
-                            country.getLon(),
-                            country.getConfirmed(),
-                            country.getDeaths(),
-                            country.getRecovered(),
-                            country.getActive(),
-                            country.getDate());
+                    printer.printRecord(country.getData());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
-    }
-
-    private StringBuilder extractObject(CountryDateDTO object) {
-        StringBuilder stringObject = new StringBuilder();
-
-        stringObject.append("\n");
-        stringObject.append(object.getCountry())
-                .append(";");
-        stringObject.append(object.getCountryCode())
-                .append(";");
-        stringObject.append(object.getProvince())
-                .append(";");
-        stringObject.append(object.getCity())
-                .append(";");
-        stringObject.append(object.getCityCode())
-                .append(";");
-        stringObject.append(object.getLat())
-                .append(";");
-        stringObject.append(object.getLon())
-                .append(";");
-        stringObject.append(object.getConfirmed())
-                .append(";");
-        stringObject.append(object.getDeaths())
-                .append(";");
-        stringObject.append(object.getRecovered())
-                .append(";");
-        stringObject.append(object.getActive())
-                .append(";");
-        stringObject.append(object.getDate())
-                .append(";");
-        return stringObject;
     }
 }
