@@ -27,7 +27,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>Wrapper</mainClass>
+                            <mainClass>ScraperWrapper</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

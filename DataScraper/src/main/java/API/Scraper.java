@@ -19,18 +19,17 @@ import java.util.Map;
  * @author Natasha Stojanova
  */
 public class Scraper {
-    private final String outputFilePath;
     private final WriteDataToFile writer;
     private String worldmeterApi =
             "https://api.covid19api.com/country/";
 
     public Scraper(String outputFilePath, String country) {
-        this.outputFilePath = outputFilePath;
         this.worldmeterApi += country;
-        this.writer = new WriteDataToFile(this.outputFilePath);
+        this.writer = new WriteDataToFile(outputFilePath);
     }
 
     public void fetchDataFromTo(ZonedDateTime from, ZonedDateTime to) throws IOException {
+        System.out.println("\u001b[32;1m[SCRAPER] Scraping from " + worldmeterApi + "\u001b[0m");
         URL url = new URL(worldmeterApi);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
@@ -54,7 +53,11 @@ public class Scraper {
                         .readValue(content.toString(), new TypeReference<List<Map<String, String>>>() {
                         });
         List<CountryDateDTO> countryDateDTOS = new ArrayList<>();
+
+        System.out.println("Total entries [" + responseJson.size() + "]");
+
         responseJson.forEach(map -> countryDateDTOS.add(new CountryDateDTO(map)));
         writer.writeToFile(countryDateDTOS);
+        System.out.println("\u001b[32;1m[SCRAPER] Scraping complete " + worldmeterApi + "\u001b[0m");
     }
 }

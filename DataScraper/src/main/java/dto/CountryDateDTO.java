@@ -2,11 +2,13 @@ package dto;
 
 import java.time.ZonedDateTime;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * @author Natasha Stojanova
  */
 public class CountryDateDTO {
+    private final Logger logger = Logger.getLogger(CountryDateDTO.class.getSimpleName());
     private String Country;
     private String CountryCode;
     private String Province;
@@ -39,11 +41,6 @@ public class CountryDateDTO {
         return new String[]{
                 this.getCountry(),
                 this.getCountryCode(),
-                this.getProvince(),
-                this.getCity(),
-                this.getCityCode(),
-                this.getLat(),
-                this.getLon(),
                 this.getConfirmed(),
                 this.getDeaths(),
                 this.getRecovered(),

@@ -13,7 +13,7 @@ import java.util.List;
  * @author Natasha Stojanova
  */
 public class WriteDataToFile {
-    private final String[] HEADERS = {"COUNTRY", "COUNTRY_CODE", "PROVINCE", "CITY", "CITY_CODE", "LAT", "LON", "CONFIRMED", "DEATHS", "RECOVERED", "ACTIVE", "DATE"};
+    private final String[] HEADERS = {"COUNTRY", "COUNTRY_CODE", "CONFIRMED", "DEATHS", "RECOVERED", "ACTIVE", "DATE"};
     private final String outputPath;
 
     public WriteDataToFile(String outputPath) {
