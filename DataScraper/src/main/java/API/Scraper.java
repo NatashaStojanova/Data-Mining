@@ -19,7 +19,6 @@ import java.util.Map;
  * @author Natasha Stojanova
  */
 public class Scraper {
-    // TODO: Change output file name to correspond with world_data.csv
     private final String outputFilePath;
     private final WriteDataToFile writer;
     private String worldmeterApi =
@@ -29,9 +28,6 @@ public class Scraper {
         this.outputFilePath = outputFilePath;
         this.worldmeterApi += country;
         this.writer = new WriteDataToFile(this.outputFilePath);
-    }
-
-    public void fetchData() {
     }
 
     public void fetchDataFromTo(ZonedDateTime from, ZonedDateTime to) throws IOException {
